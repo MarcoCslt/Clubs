@@ -20,11 +20,10 @@ namespace UnitTests
         public void TestClub()
         {
             League volleyballLeague = new League(13, "Volleyball");
-            Club club = new Club("AS Meudon", "asmeudon.com", "3, Bis Rue Georges Millandy", "92360", "Meudon La Foret",
+            Club club = new Club("AS Meudon", "3, Bis Rue Georges Millandy", "92360", "Meudon La Foret",
                 "asmeudon@test.com", "012345679", volleyballLeague);
 
             Assert.AreEqual("AS Meudon", club.Name);
-            Assert.AreEqual("asmeudon.com", club.Url);
             Assert.AreEqual("3, Bis Rue Georges Millandy", club.Address);
             Assert.AreEqual("92360", club.ZipCode);
             Assert.AreEqual("Meudon La Foret", club.City);
@@ -38,7 +37,7 @@ namespace UnitTests
         {
             DateTime date = new DateTime(1999, 12, 12);
             League tennisLeague = new League(20, "tennis");
-            Club club = new Club("un club", "une url", "une adresse", "un CP", "une ville", "un mail", "012345679", tennisLeague);
+            Club club = new Club("un club", "une adresse", "un CP", "une ville", "un mail", "012345679", tennisLeague);
             Adherent adhtest = new Adherent("Bertrand", "Jean", "92130", "6 square Louis Blé", "Issy-les-mx", date, 150, club);
 
             Assert.AreEqual("Bertrand", adhtest.LastName);

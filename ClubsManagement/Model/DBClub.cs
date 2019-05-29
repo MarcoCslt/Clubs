@@ -12,7 +12,7 @@ namespace ClubsManagement.Model
             using (Connection)
             {
                 Connection.Open();
-                var query = "SELECT * FROM club NATURAL JOIN ligue ORDER BY id_club";
+                var query = "SELECT * FROM club NATURAL JOIN ligue ORDER BY club_id";
                 var cmd = new MySqlCommand(query, Connection);
 
                 using (var datareader = cmd.ExecuteReader())
@@ -20,10 +20,10 @@ namespace ClubsManagement.Model
                     while (datareader.Read())
                     {
                         var league = new League((int)datareader["lg_id"], (string)datareader["lg_nom"]);
-                        var club = new Club((int)datareader["id_club"], (string)datareader["Titre_club"],
-                                            (string)datareader["url_club"], (string)datareader["Adresse_club"],
-                                            (string)datareader["Code_Postal_club"], (string)datareader["Ville_club"],
-                                            (string)datareader["mail_club"], (string)datareader["telephone_club"], league);
+                        var club = new Club((int)datareader["club_id"], (string)datareader["club_nom"],
+                                            (string)datareader["club_adresse"], (string)datareader["club_cp"],
+                                            (string)datareader["club_ville"], (string)datareader["club_email"], 
+                                            (string)datareader["club_tel"], league);
 
                         clubs.Add(club);
                     }
@@ -38,7 +38,7 @@ namespace ClubsManagement.Model
             using (Connection)
             {
                 Connection.Open();
-                var query = "SELECT count(id_adherent) as number FROM adherent natural join club WHERE id_club = @id";
+                var query = "SELECT count(adh_id) as number FROM adherent NATURAL JOIN club WHERE club_id = @id";
                 var cmd = new MySqlCommand(query, Connection);
 
                 cmd.Parameters.AddWithValue("@id", club.Id);
@@ -82,11 +82,10 @@ namespace ClubsManagement.Model
             using (Connection)
             {
                 Connection.Open();
-                var query = "INSERT INTO `club` VALUES (NULL, @titre, @url, @adresse, @cp, @ville, @mail, @tel, @league)";
+                var query = "INSERT INTO `club` VALUES (NULL, @titre, @adresse, @cp, @ville, @mail, @tel, @league)";
                 var cmd = new MySqlCommand(query, Connection);
 
                 cmd.Parameters.AddWithValue("@titre", club.Name);
-                cmd.Parameters.AddWithValue("@url", club.Url);
                 cmd.Parameters.AddWithValue("@adresse", club.Address);
                 cmd.Parameters.AddWithValue("@cp", club.ZipCode);
                 cmd.Parameters.AddWithValue("@ville", club.City);
@@ -102,13 +101,12 @@ namespace ClubsManagement.Model
             using (Connection)
             {
                 Connection.Open();
-                var query = "UPDATE `club` SET `Titre_club` = @titre, `url_club` = @url, `Adresse_club` = @adresse,"
-                            + "`Code_Postal_club` = @cp, `Ville_club` = @ville, `mail_club` = @mail,"
-                            + "`telephone_club` = @tel WHERE `club`.`id_club` = @idc";
+                var query = "UPDATE `club` SET `club_nom` = @titre, `club_adresse` = @adresse,"
+                            + "`club_cp` = @cp, `club_ville` = @ville, `club_email` = @mail,"
+                            + "`club_tel` = @tel WHERE `club`.`club_id` = @idc";
                 var cmd = new MySqlCommand(query, Connection);
 
                 cmd.Parameters.AddWithValue("@titre", club.Name);
-                cmd.Parameters.AddWithValue("@url", club.Url);
                 cmd.Parameters.AddWithValue("@adresse", club.Address);
                 cmd.Parameters.AddWithValue("@cp", club.ZipCode);
                 cmd.Parameters.AddWithValue("@ville", club.City);

@@ -44,7 +44,7 @@ namespace ClubsManagement.Views
                 var nameOfLeague = cmbClubLeague.SelectedItem.ToString();
 
                 var league = ManageLeague.GetLeagueByName(nameOfLeague);
-                var newClub = new Club(name, url, address, zipCode, city, mail, tel, league);
+                var newClub = new Club(name, address, zipCode, city, mail, tel, league);
 
                 ManageClub.AddClub(newClub);
                 DBClub.AddClub(newClub);

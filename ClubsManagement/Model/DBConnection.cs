@@ -10,11 +10,11 @@ namespace ClubsManagement.Model
 
         public DBConnection()
         {
-            var server = "localhost";
+            var server = "10.54.0.150";
             var port = "3306";
-            var database = "m2lcsharp";
-            var uid = "root";
-            var password = "";
+            var database = "CLUB_vincent";
+            var uid = "vincent";
+            var password = "bobo";
 
             ConnectionString = "Server=" + server + ";" + "Port=" + port + ";" + "Database=" + database + ";"
                                 + "Uid=" + uid + ";" + "Pwd=" + password + ";";

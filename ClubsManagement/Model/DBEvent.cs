@@ -23,11 +23,11 @@ namespace ClubsManagement.Model
                     {
                         foreach (var club in manageClub.Clubs)
                         {
-                            if ((int)datareader["id_club"] == club.Id)
+                            if ((int)datareader["club_id"] == club.Id)
                             {
-                                var anEvent = new Event((int)datareader["id_evenement"], (string)datareader["Titre_evenement"],
-                                                          (DateTime)datareader["debut_evenement"], 
-                                                          (DateTime)datareader["fin_evenement"], club);
+                                var anEvent = new Event((int)datareader["even_id"], (string)datareader["even_nom"],
+                                                          (DateTime)datareader["even_debut"], 
+                                                          (DateTime)datareader["even_fin"], club);
                                 events.Add(anEvent);
                             }
                         }
@@ -41,8 +41,8 @@ namespace ClubsManagement.Model
             using (Connection)
             {
                 Connection.Open();
-                var query = "INSERT INTO `evenement` (`id_evenement`, `Titre_evenement`, `debut_evenement`," 
-                            + "`fin_evenement`, `id_club`) VALUES (NULL, @titre, @debut, @fin, @id_club)";
+                var query = "INSERT INTO `evenement` (`even_id`, `even_nom`, `even_debut`,"
+                            + "`even_fin`, `club_id`) VALUES (NULL, @titre, @debut, @fin, @id_club)";
                 var cmd = new MySqlCommand(query, Connection);
 
                 cmd.Parameters.AddWithValue("@titre", eventToAdd.Name);
@@ -58,11 +58,11 @@ namespace ClubsManagement.Model
             using (Connection)
             {
                 Connection.Open();
-                var query = "UPDATE `evenement` SET `Titre_evenement` = @titre, `debut_evenement` = @debut," 
-                            + "`fin_evenement` = @fin WHERE `evenement`.`id_evenement` = @id";
+                var query = "UPDATE `evenement` SET `even_nom` = @nom, `even_debut` = @debut,"
+                            + "`even_fin` = @fin WHERE `evenement`.`even_id` = @id";
                 var cmd = new MySqlCommand(query, Connection);
 
-                cmd.Parameters.AddWithValue("@titre", eventToModify.Name);
+                cmd.Parameters.AddWithValue("@nom", eventToModify.Name);
                 cmd.Parameters.AddWithValue("@debut", eventToModify.Start);
                 cmd.Parameters.AddWithValue("@fin", eventToModify.End);
                 cmd.Parameters.AddWithValue("@id", eventToModify.Id);
@@ -75,7 +75,7 @@ namespace ClubsManagement.Model
             using (Connection)
             {
                 Connection.Open();
-                var query = "DELETE FROM `evenement` WHERE `evenement`.`id_evenement` = @id";
+                var query = "DELETE FROM `evenement` WHERE `evenement`.`even_id` = @id";
                 var cmd = new MySqlCommand(query, Connection);
 
                 cmd.Parameters.AddWithValue("@id", eventToDelete.Id);

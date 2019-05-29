@@ -15,7 +15,7 @@ namespace ClubsManagement.Model
             using (Connection)
             { 
                 Connection.Open();
-                var query = "SELECT * FROM adherent NATURAL JOIN club ORDER BY id_adherent";
+                var query = "SELECT * FROM adherent NATURAL JOIN club ORDER BY adh_id";
                 var cmd = new MySqlCommand(query, Connection);
 
                 using (var datareader = cmd.ExecuteReader())
@@ -24,13 +24,13 @@ namespace ClubsManagement.Model
                     {
                         foreach (var club in manageClub.Clubs)
                         {
-                            if ((int)datareader["id_club"] == club.Id)
+                            if ((int)datareader["club_id"] == club.Id)
                             {
-                                var adherent = new Adherent((int)datareader["id_adherent"], (int)datareader["numero_licence"],
-                                    (string)datareader["Nom_adherent"], (string)datareader["Prenom_adherent"],
-                                    (string)datareader["Code_Postal_adherent"], (string)datareader["Adresse_adherent"],
-                                    (string)datareader["Ville_adherent"], (DateTime)datareader["Date_naissance_adherent"],
-                                    (int)datareader["cotisation_adherent"], club);
+                                var adherent = new Adherent((int)datareader["adh_id"], (int)datareader["adh_licence"],
+                                    (string)datareader["adh_nom"], (string)datareader["adh_prenom"],
+                                    (string)datareader["adh_cp"], (string)datareader["adh_adresse"],
+                                    (string)datareader["adh_ville"], (DateTime)datareader["adh_naissance"],
+                                    (int)datareader["adh_cotisation"], club);
                                 adherents.Add(adherent);
                                 break;
                             }
@@ -45,8 +45,8 @@ namespace ClubsManagement.Model
             using (Connection)
             {
                 Connection.Open();
-                var query = "INSERT INTO `adherent` (`Nom_adherent`, `Prenom_adherent`,`Date_naissance_adherent`,"
-                            + "`Adresse_adherent`, `Code_Postal_adherent`, `Ville_adherent`,`cotisation_adherent`, `id_club`) "
+                var query = "INSERT INTO `adherent` (`adh_nom`, `adh_prenom`,`adh_naissance`,"
+                            + "`adh_adresse`, `adh_cp`, `adh_ville`,`adh_cotisation`, `club_id`) "
                             + "VALUES (@nom, @prenom, @date, @Adresse, @codepostal, @ville, @cotisation, @club);";
                 var cmd = new MySqlCommand(query, Connection);
 
@@ -83,10 +83,10 @@ namespace ClubsManagement.Model
             using (Connection)
             {
                 Connection.Open();
-                var query = "UPDATE `adherent` SET `numero_licence` = `id_adherent`, `Nom_adherent` = @nom, "
-                    + "`Prenom_adherent` = @prenom, `Date_naissance_adherent` = @date, `Adresse_adherent` = @adresse,"
-                    + "`Code_Postal_adherent` = @codepostal, `Ville_adherent` = @ville, `id_club` = @idClub "
-                    + "WHERE `adherent`.`id_adherent` = @id" ;
+                var query = "UPDATE `adherent` SET `adh_licence` = `adh_id`, `adh_nom` = @nom, "
+                    + "`adh_prenom` = @prenom, `adh_naissance` = @date, `adh_adresse` = @adresse,"
+                    + "`adh_cp` = @codepostal, `adh_ville` = @ville, `club_id` = @idClub "
+                    + "WHERE `adherent`.`adh_id` = @id" ;
                 var cmd = new MySqlCommand(query, Connection);
 
                 cmd.Parameters.AddWithValue("@nom", adherentToModify.LastName);
@@ -106,7 +106,7 @@ namespace ClubsManagement.Model
             using (Connection)
             {
                 Connection.Open();
-                var query = "DELETE FROM `adherent` WHERE `adherent`.`id_adherent` = @id";
+                var query = "DELETE FROM `adherent` WHERE `adherent`.`adh_id` = @id";
                 var cmd = new MySqlCommand(query, Connection);
 
                 cmd.Parameters.AddWithValue("@id", adherentToDelete.Id);

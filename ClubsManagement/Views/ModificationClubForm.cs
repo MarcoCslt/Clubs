@@ -19,7 +19,6 @@ namespace ClubsManagement.Views
         private void Modification_Club_Form_Load(object sender, EventArgs e)
         {
             txtClubName.Text = ClubToModify.Name;
-            txtClubUrl.Text = ClubToModify.Url;
             txtClubZipCode.Text = ClubToModify.ZipCode;
             txtCLubCity.Text = ClubToModify.City;
             txtClubAddress.Text = ClubToModify.Address;
@@ -35,7 +34,6 @@ namespace ClubsManagement.Views
                 && txtClubMail.Text != string.Empty && txtClubTel.Text != string.Empty)
             {
                 ClubToModify.Name = txtClubName.Text;
-                ClubToModify.Url = txtClubUrl.Text;
                 ClubToModify.ZipCode = txtClubZipCode.Text;
                 ClubToModify.City = txtCLubCity.Text;
                 ClubToModify.Address = txtClubAddress.Text;

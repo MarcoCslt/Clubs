@@ -28,7 +28,7 @@ namespace ClubsManagement.Views
                 int numberOfAdherent= DBClub.CountAdherent(club);
                 int numberOfEvent = DBClub.CountEvent(club);
 
-                DGClubs.Rows.Add(club.Id, club.Name, club.Url, club.ZipCode, club.City,
+                DGClubs.Rows.Add(club.Id, club.Name, club.ZipCode, club.City,
                                  club.Address, club.Mail, club.Telephone, club.League.Name, 
                                  numberOfAdherent, numberOfEvent);
             }
