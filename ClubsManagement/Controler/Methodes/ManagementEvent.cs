@@ -10,6 +10,7 @@ namespace ClubsManagement.Controler
          * one instance of ManagementEvent and one list of events.
          **/
         private static ManagementEvent Instance = null;
+        private DBEvent DBEvent = new DBEvent();
         public List<Event> Events { get; set; } = new List<Event>();
 
         private ManagementEvent()
@@ -25,6 +26,11 @@ namespace ClubsManagement.Controler
                 Instance = new ManagementEvent();
             }
             return Instance;
+        }
+
+        public void UpdateManagementEvent()
+        {
+            DBEvent.ReadAllEvent(Events);
         }
 
         public Event GetEventById(int idOfEvent)

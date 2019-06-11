@@ -29,13 +29,12 @@ namespace ClubsManagement.Views
 
         private void btn_Add_Club_Click(object sender, EventArgs e)
         {                
-            if (txtClubName.Text != string.Empty && txtClubUrl.Text != string.Empty 
-                && txtClubZipCode.Text != string.Empty && txtClubCity.Text != string.Empty 
-                && txtClubAddress.Text != string.Empty && txtClubMail.Text != string.Empty
-                && txtClubTel.Text != string.Empty && cmbClubLeague.SelectedItem.ToString() != string.Empty)
+            if (txtClubName.Text != string.Empty && txtClubZipCode.Text != string.Empty 
+                && txtClubCity.Text != string.Empty && txtClubAddress.Text != string.Empty 
+                && txtClubMail.Text != string.Empty && txtClubTel.Text != string.Empty 
+                && cmbClubLeague.SelectedItem.ToString() != string.Empty)
             {
                 var name = txtClubName.Text;
-                var url = txtClubUrl.Text;
                 var zipCode = txtClubZipCode.Text;
                 var city = txtClubCity.Text;
                 var address = txtClubAddress.Text;

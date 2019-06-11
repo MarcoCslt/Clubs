@@ -30,7 +30,7 @@ namespace ClubsManagement.Views
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             DGEvents.Rows.Clear();
-
+            ManageEvent.UpdateManagementEvent();
             Management_Event_Form_Load(sender, e);
         }
 

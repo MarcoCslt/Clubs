@@ -31,6 +31,7 @@ namespace ClubsManagement.Views
 
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
+            ManageAdherent.UpdateManagementAdherent();
             Management_Adherent_Form_Load(sender, e);
         }
 

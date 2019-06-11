@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.GBAddClub = new System.Windows.Forms.GroupBox();
-            this.lbl_erreur = new System.Windows.Forms.Label();
             this.lblClubLeague = new System.Windows.Forms.Label();
             this.cmbClubLeague = new System.Windows.Forms.ComboBox();
             this.txtClubTel = new System.Windows.Forms.MaskedTextBox();
@@ -41,9 +40,7 @@
             this.lblClubMail = new System.Windows.Forms.Label();
             this.lblClubName = new System.Windows.Forms.Label();
             this.lblClubAddress = new System.Windows.Forms.Label();
-            this.txtClubUrl = new System.Windows.Forms.MaskedTextBox();
             this.txtClubAddress = new System.Windows.Forms.MaskedTextBox();
-            this.lblClubUrl = new System.Windows.Forms.Label();
             this.lblClubCity = new System.Windows.Forms.Label();
             this.txtClubCity = new System.Windows.Forms.MaskedTextBox();
             this.txtClubZipCode = new System.Windows.Forms.MaskedTextBox();
@@ -56,7 +53,6 @@
             this.GBAddClub.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GBAddClub.Controls.Add(this.lbl_erreur);
             this.GBAddClub.Controls.Add(this.lblClubLeague);
             this.GBAddClub.Controls.Add(this.cmbClubLeague);
             this.GBAddClub.Controls.Add(this.txtClubTel);
@@ -68,9 +64,7 @@
             this.GBAddClub.Controls.Add(this.lblClubMail);
             this.GBAddClub.Controls.Add(this.lblClubName);
             this.GBAddClub.Controls.Add(this.lblClubAddress);
-            this.GBAddClub.Controls.Add(this.txtClubUrl);
             this.GBAddClub.Controls.Add(this.txtClubAddress);
-            this.GBAddClub.Controls.Add(this.lblClubUrl);
             this.GBAddClub.Controls.Add(this.lblClubCity);
             this.GBAddClub.Controls.Add(this.txtClubCity);
             this.GBAddClub.Controls.Add(this.txtClubZipCode);
@@ -83,16 +77,6 @@
             this.GBAddClub.TabIndex = 18;
             this.GBAddClub.TabStop = false;
             this.GBAddClub.Text = "Ajouter un club";
-            // 
-            // lbl_erreur
-            // 
-            this.lbl_erreur.AutoSize = true;
-            this.lbl_erreur.ForeColor = System.Drawing.Color.Red;
-            this.lbl_erreur.Location = new System.Drawing.Point(485, 191);
-            this.lbl_erreur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_erreur.Name = "lbl_erreur";
-            this.lbl_erreur.Size = new System.Drawing.Size(0, 17);
-            this.lbl_erreur.TabIndex = 23;
             // 
             // lblClubLeague
             // 
@@ -115,7 +99,7 @@
             // 
             // txtClubTel
             // 
-            this.txtClubTel.Location = new System.Drawing.Point(199, 323);
+            this.txtClubTel.Location = new System.Drawing.Point(199, 303);
             this.txtClubTel.Margin = new System.Windows.Forms.Padding(4);
             this.txtClubTel.Mask = "0000000000";
             this.txtClubTel.Name = "txtClubTel";
@@ -127,7 +111,7 @@
             // 
             this.lblClubTel.AutoSize = true;
             this.lblClubTel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClubTel.Location = new System.Drawing.Point(8, 323);
+            this.lblClubTel.Location = new System.Drawing.Point(8, 303);
             this.lblClubTel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClubTel.Name = "lblClubTel";
             this.lblClubTel.Size = new System.Drawing.Size(101, 22);
@@ -136,7 +120,7 @@
             // 
             // txtClubMail
             // 
-            this.txtClubMail.Location = new System.Drawing.Point(199, 275);
+            this.txtClubMail.Location = new System.Drawing.Point(199, 255);
             this.txtClubMail.Margin = new System.Windows.Forms.Padding(4);
             this.txtClubMail.Name = "txtClubMail";
             this.txtClubMail.PromptChar = ' ';
@@ -169,7 +153,7 @@
             // 
             // txtClubName
             // 
-            this.txtClubName.Location = new System.Drawing.Point(199, 21);
+            this.txtClubName.Location = new System.Drawing.Point(199, 64);
             this.txtClubName.Margin = new System.Windows.Forms.Padding(4);
             this.txtClubName.Name = "txtClubName";
             this.txtClubName.PromptChar = ' ';
@@ -180,7 +164,7 @@
             // 
             this.lblClubMail.AutoSize = true;
             this.lblClubMail.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClubMail.Location = new System.Drawing.Point(8, 275);
+            this.lblClubMail.Location = new System.Drawing.Point(8, 255);
             this.lblClubMail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClubMail.Name = "lblClubMail";
             this.lblClubMail.Size = new System.Drawing.Size(43, 22);
@@ -191,7 +175,7 @@
             // 
             this.lblClubName.AutoSize = true;
             this.lblClubName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClubName.Location = new System.Drawing.Point(8, 21);
+            this.lblClubName.Location = new System.Drawing.Point(8, 64);
             this.lblClubName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClubName.Name = "lblClubName";
             this.lblClubName.Size = new System.Drawing.Size(50, 22);
@@ -202,47 +186,27 @@
             // 
             this.lblClubAddress.AutoSize = true;
             this.lblClubAddress.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClubAddress.Location = new System.Drawing.Point(8, 227);
+            this.lblClubAddress.Location = new System.Drawing.Point(8, 207);
             this.lblClubAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClubAddress.Name = "lblClubAddress";
             this.lblClubAddress.Size = new System.Drawing.Size(82, 22);
             this.lblClubAddress.TabIndex = 11;
             this.lblClubAddress.Text = "Adresse";
             // 
-            // txtClubUrl
-            // 
-            this.txtClubUrl.Location = new System.Drawing.Point(199, 71);
-            this.txtClubUrl.Margin = new System.Windows.Forms.Padding(4);
-            this.txtClubUrl.Name = "txtClubUrl";
-            this.txtClubUrl.PromptChar = ' ';
-            this.txtClubUrl.Size = new System.Drawing.Size(157, 22);
-            this.txtClubUrl.TabIndex = 2;
-            // 
             // txtClubAddress
             // 
-            this.txtClubAddress.Location = new System.Drawing.Point(199, 227);
+            this.txtClubAddress.Location = new System.Drawing.Point(199, 207);
             this.txtClubAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtClubAddress.Name = "txtClubAddress";
             this.txtClubAddress.PromptChar = ' ';
             this.txtClubAddress.Size = new System.Drawing.Size(157, 22);
             this.txtClubAddress.TabIndex = 10;
             // 
-            // lblClubUrl
-            // 
-            this.lblClubUrl.AutoSize = true;
-            this.lblClubUrl.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClubUrl.Location = new System.Drawing.Point(8, 69);
-            this.lblClubUrl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblClubUrl.Name = "lblClubUrl";
-            this.lblClubUrl.Size = new System.Drawing.Size(33, 22);
-            this.lblClubUrl.TabIndex = 3;
-            this.lblClubUrl.Text = "Url";
-            // 
             // lblClubCity
             // 
             this.lblClubCity.AutoSize = true;
             this.lblClubCity.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClubCity.Location = new System.Drawing.Point(8, 176);
+            this.lblClubCity.Location = new System.Drawing.Point(8, 156);
             this.lblClubCity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClubCity.Name = "lblClubCity";
             this.lblClubCity.Size = new System.Drawing.Size(46, 22);
@@ -251,7 +215,7 @@
             // 
             // txtClubCity
             // 
-            this.txtClubCity.Location = new System.Drawing.Point(199, 176);
+            this.txtClubCity.Location = new System.Drawing.Point(199, 156);
             this.txtClubCity.Margin = new System.Windows.Forms.Padding(4);
             this.txtClubCity.Name = "txtClubCity";
             this.txtClubCity.PromptChar = ' ';
@@ -260,7 +224,7 @@
             // 
             // txtClubZipCode
             // 
-            this.txtClubZipCode.Location = new System.Drawing.Point(199, 125);
+            this.txtClubZipCode.Location = new System.Drawing.Point(199, 105);
             this.txtClubZipCode.Margin = new System.Windows.Forms.Padding(4);
             this.txtClubZipCode.Mask = "00000";
             this.txtClubZipCode.Name = "txtClubZipCode";
@@ -272,7 +236,7 @@
             // 
             this.lblClubZipCode.AutoSize = true;
             this.lblClubZipCode.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClubZipCode.Location = new System.Drawing.Point(8, 125);
+            this.lblClubZipCode.Location = new System.Drawing.Point(8, 105);
             this.lblClubZipCode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblClubZipCode.Name = "lblClubZipCode";
             this.lblClubZipCode.Size = new System.Drawing.Size(113, 22);
@@ -308,9 +272,7 @@
         private System.Windows.Forms.Label lblClubMail;
         private System.Windows.Forms.Label lblClubName;
         private System.Windows.Forms.Label lblClubAddress;
-        private System.Windows.Forms.MaskedTextBox txtClubUrl;
         private System.Windows.Forms.MaskedTextBox txtClubAddress;
-        private System.Windows.Forms.Label lblClubUrl;
         private System.Windows.Forms.Label lblClubCity;
         private System.Windows.Forms.MaskedTextBox txtClubCity;
         private System.Windows.Forms.MaskedTextBox txtClubZipCode;
@@ -320,6 +282,5 @@
         private System.Windows.Forms.MaskedTextBox txtClubMail;
         private System.Windows.Forms.Label lblClubLeague;
         private System.Windows.Forms.ComboBox cmbClubLeague;
-        private System.Windows.Forms.Label lbl_erreur;
     }
 }

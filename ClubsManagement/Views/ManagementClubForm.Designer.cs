@@ -35,7 +35,6 @@
             this.btnModClub = new System.Windows.Forms.Button();
             this.id_club = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Titre_club = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.url_club = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Code_Postal_club = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ville_Club = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Adresse_Club = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,7 +60,6 @@
             this.DGClubs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_club,
             this.Titre_club,
-            this.url_club,
             this.Code_Postal_club,
             this.Ville_Club,
             this.Adresse_Club,
@@ -139,17 +137,10 @@
             // 
             // Titre_club
             // 
-            this.Titre_club.HeaderText = "Titre";
+            this.Titre_club.HeaderText = "Nom";
             this.Titre_club.Name = "Titre_club";
             this.Titre_club.ReadOnly = true;
             this.Titre_club.Width = 66;
-            // 
-            // url_club
-            // 
-            this.url_club.HeaderText = "Url du club";
-            this.url_club.Name = "url_club";
-            this.url_club.ReadOnly = true;
-            this.url_club.Width = 105;
             // 
             // Code_Postal_club
             // 
@@ -238,7 +229,6 @@
         private System.Windows.Forms.Button btnModClub;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_club;
         private System.Windows.Forms.DataGridViewTextBoxColumn Titre_club;
-        private System.Windows.Forms.DataGridViewTextBoxColumn url_club;
         private System.Windows.Forms.DataGridViewTextBoxColumn Code_Postal_club;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ville_Club;
         private System.Windows.Forms.DataGridViewTextBoxColumn Adresse_Club;

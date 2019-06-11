@@ -30,7 +30,7 @@ namespace ClubsManagement.Model
                                     (string)datareader["adh_nom"], (string)datareader["adh_prenom"],
                                     (string)datareader["adh_cp"], (string)datareader["adh_adresse"],
                                     (string)datareader["adh_ville"], (DateTime)datareader["adh_naissance"],
-                                    (int)datareader["adh_cotisation"], club);
+                                    Convert.ToInt32(datareader["adh_cotisation"]), club);
                                 adherents.Add(adherent);
                                 break;
                             }
